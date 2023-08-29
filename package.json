@@ -1,0 +1,16 @@
+{
+  "name": "nodeExel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "excel4node": "^1.7.2",
+    "xlsx": "^0.18.4"
+  }
+}
