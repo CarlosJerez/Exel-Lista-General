@@ -15,16 +15,16 @@ const droplusList = require("./droplus");
 const drofarzucaList = require("./drofarzuca");
 const dromarkoList = require("./dromarko");
 
-//console.log(dromarkoList);
+//console.log(drofarzucaList);
 
 farmaciaList = insertJson(farmaciaList, cobecaList, "cod_barra", "cobeca");
-farmaciaList = insertJson(farmaciaList, drolancaList, "Codigo de Barras", "drolanca");
+farmaciaList = insertJson(farmaciaList, drolancaList, "codigo Barras", "drolanca");
 farmaciaList = insertJson(farmaciaList, drogueriaAvilaList, "CODIGO", "avila");
 farmaciaList = insertJson(farmaciaList, dromarcaList, "PLU", "dromarca");
 farmaciaList = insertJson(farmaciaList, drocercaList, "Cod. Barra", "drocerca");
-farmaciaList = insertJson(farmaciaList, droplusList, "CODIGO DE BARRA", "droplus");
 farmaciaList = insertJson(farmaciaList, precioList, "Codigo", "nazareno");
 farmaciaList = insertJson(farmaciaList, exelAnterior, "Codigo", "anterior");
+farmaciaList = insertJson(farmaciaList, droplusList, " BARRA", "droplus");
 farmaciaList = insertJson(farmaciaList, drofarzucaList, " BARRA", "drofarzuca");
 farmaciaList = insertJson(farmaciaList, dromarkoList, " BARRA", "dromarko");
 
@@ -165,16 +165,16 @@ farmaciaListFinal.forEach(function (item, index) {
     ws.cell(index + 2, orden.cod_drolanca).number(data["Código"]);
     if (data.hasOwnProperty(" Precio Final  "))
       ws.cell(index + 2, orden.DROLANCA).number(data[" Precio Final  "]);
-    if (data.hasOwnProperty("F.Venc "))
-      ws.cell(index + 2, orden.FECHA_DROLANCA).string(data["F.Venc "]);
+    if (data.hasOwnProperty("F/Venc"))
+      ws.cell(index + 2, orden.FECHA_DROLANCA).string(data["F/Venc"]);
     if (data.hasOwnProperty("Laboratorio"))
       ws.cell(index + 2, orden.Laboratorio).string(data["Laboratorio"]);
   }
 
   data = item.drogueria365;
   if (data != undefined) {
-    if (data.hasOwnProperty(" NETO"))
-      ws.cell(index + 2, orden[365]).number(data[" NETO"]);
+    if (data.hasOwnProperty("  NETO "))
+      ws.cell(index + 2, orden[365]).number(data["  NETO "]);
     if (data.hasOwnProperty(" FECHVENC."))
       ws.cell(index + 2, orden.FECHA_365).number(data[" FECHVENC."]);
     if (data.hasOwnProperty(" MARCA"))
@@ -195,8 +195,8 @@ farmaciaListFinal.forEach(function (item, index) {
   if (data != undefined) {
     if (data.hasOwnProperty("DESCRIPCION"))
       ws.cell(index + 2, orden.Descripcion).string(data["DESCRIPCION"]);
-    if (data.hasOwnProperty("PRECIO  Bs."))
-      ws.cell(index + 2, orden.DROMARCA).number(data["PRECIO  Bs."]);
+    if (data.hasOwnProperty("P. NETO"))
+      ws.cell(index + 2, orden.DROMARCA).number(data["P. NETO"]);
     if (data.hasOwnProperty("LABORATORIO"))
       ws.cell(index + 2, orden.Laboratorio).string(data["LABORATORIO"]);
   }
@@ -215,10 +215,10 @@ farmaciaListFinal.forEach(function (item, index) {
 
   data = item.droplus;
   if (data != undefined) {
-    if (data.hasOwnProperty("PRECIO CON DESCUENTO"))
-      ws.cell(index + 2, orden.DROPLUS).number(data["PRECIO CON DESCUENTO"]);
-    if (data.hasOwnProperty("FECHA DE VENCIMIENTO "))
-      ws.cell(index + 2, orden.FECHA_DROPLUS).number(data["FECHA DE VENCIMIENTO "]);
+    if (data.hasOwnProperty(" NETO"))
+      ws.cell(index + 2, orden.DROPLUS).number(data[" NETO"]);
+    /*     if (data.hasOwnProperty("FECHA DE VENCIMIENTO "))
+      ws.cell(index + 2, orden.FECHA_DROPLUS).number(data["FECHA DE VENCIMIENTO "]); */
   }
 
   data = item.drofarzuca;
